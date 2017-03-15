@@ -27,10 +27,11 @@ def LevenshteinMethod(x, y):
             matrix[i][j] = min(distDiag, distHor, distVer)
     return matrix[-1][-1]
 
-import datetime as d
-#st = d.datetime.now()
-#print(EditDist("Shakespeare", "shake spear"))
-#print((d.datetime.now() - st).total_seconds())
-st = d.datetime.now()
-print(LevenshteinMethod("Shakespeare", "shake spear"))
-print((d.datetime.now() - st).total_seconds())
+if __name__ == '__main__':
+    import datetime as d
+    #st = d.datetime.now()
+    #print(EditDist("Shakespeare", "shake spear"))
+    #print((d.datetime.now() - st).total_seconds())
+    st = d.datetime.now()
+    print(LevenshteinMethod("Shakespeare", "shake spear"))
+    print((d.datetime.now() - st).total_seconds())
