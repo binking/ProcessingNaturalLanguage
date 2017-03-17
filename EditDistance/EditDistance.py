@@ -20,11 +20,14 @@ def LevenshteinMethod(x, y):
     for i in range(1, len(x) + 1 ):
         for j in range(1, len(y) + 1):
             # Fill in other elements
+            if i == 2 and j == 2:
+                import ipdb; ipdb.set_trace()
             delta = 1 if x[i-1] != y[j-1] else 0
             distDiag = matrix[i-1][j-1] + delta
             distVer = matrix[i-1][j] + 1
             distHor = matrix[i][j-1] + 1
             matrix[i][j] = min(distDiag, distHor, distVer)
+    print(matrix)
     return matrix[-1][-1]
 
 if __name__ == '__main__':
